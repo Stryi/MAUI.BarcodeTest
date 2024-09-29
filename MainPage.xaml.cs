@@ -1,25 +1,28 @@
-﻿namespace MAUI.BarcodeTest
+﻿using ZXing;
+
+namespace MAUI.BarcodeTest
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
+            barcodeReader.Options = new ZXing.Net.Maui.BarcodeReaderOptions
+            {
+                Formats = ZXing.Net.Maui.BarcodeFormat.Ean13,
+                AutoRotate = true,
+                Multiple = true
+            };
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        protected void barcodeReader_BarcodesDetected(object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            // Handle barcode detected event here
+            var barcodes = e.Results; // Access the detected barcodes here
+            foreach (var barcode in barcodes)
+            {
+                Console.WriteLine($"Detected Barcode: {barcode.Value}");
+            }
         }
     }
-
 }
