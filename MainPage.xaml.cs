@@ -7,12 +7,14 @@ namespace MAUI.BarcodeTest
         public MainPage()
         {
             InitializeComponent();
+            /*
             barcodeReader.Options = new ZXing.Net.Maui.BarcodeReaderOptions
             {
                 Formats = ZXing.Net.Maui.BarcodeFormat.Ean13,
                 AutoRotate = true,
                 Multiple = true
             };
+            */
         }
 
         protected void barcodeReader_BarcodesDetected(object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
@@ -23,6 +25,13 @@ namespace MAUI.BarcodeTest
             {
                 Console.WriteLine($"Detected Barcode: {barcode.Value}");
             }
+        }
+
+        // Event-Handler für den Button-Klick
+        private void OnButtonClicked(object sender, EventArgs e)
+        {
+            // Hier kannst du die gewünschte Logik implementieren
+            DisplayAlert("Button Clicked", "You clicked the button!", "OK");
         }
     }
 }

@@ -3,9 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
              x:Class="MAUI.BarcodeTest.MainPage">
+    
+    <StackLayout Padding="30">
+        <!-- Label zur Anzeige des Titels -->
+        <Label Text="Welcome to MyPage" 
+               FontSize="24" 
+               HorizontalOptions="Center" />
 
-        <zxing:CameraBarcodeReaderView
-        x:Name="barcodeReader"
-        BarcodesDetected="barcodeReader_BarcodesDetected" />
+        <!-- Button, der eine Aktion auslöst -->
+        <Button Text="Click Me 1"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="OnButtonClicked"/>
+
+        <Button Text="Click Me 2"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="OnButtonClicked"/>
+
+        <!-- zxing:CameraBarcodeReaderView
+                x:Name="barcodeReader"
+                BarcodesDetected="barcodeReader_BarcodesDetected" 
+                VerticalOptions="Center"
+            / -->
+
+    </StackLayout>
+
 
 </ContentPage>
