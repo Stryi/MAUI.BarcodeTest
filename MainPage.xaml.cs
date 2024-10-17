@@ -30,8 +30,7 @@ namespace MAUI.BarcodeTest
         // Event-Handler für den Button-Klick
         private void OnButtonClicked(object sender, EventArgs e)
         {
-            // Hier kannst du die gewünschte Logik implementieren
-            DisplayAlert("Button Clicked", "You clicked the button!", "OK");
+            Navigation.PushAsync(new Settings());
         }
     }
 }

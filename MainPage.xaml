@@ -21,11 +21,10 @@
                 VerticalOptions="Center"
                 Clicked="OnButtonClicked"/>
 
-        <!-- zxing:CameraBarcodeReaderView
+        <zxing:CameraBarcodeReaderView
                 x:Name="barcodeReader"
-                BarcodesDetected="barcodeReader_BarcodesDetected" 
-                VerticalOptions="Center"
-            / -->
+                BarcodesDetected="barcodeReader_BarcodesDetected"
+                VerticalOptions="Center" />
 
     </StackLayout>
 
