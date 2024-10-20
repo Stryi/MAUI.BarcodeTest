@@ -2,7 +2,7 @@ using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using System;
 
-namespace MAUI.BarcodeTest
+namespace MauiApp2
 {
     internal class Program : MauiApplication
     {

@@ -1,4 +1,4 @@
-﻿namespace MAUI.BarcodeTest
+﻿namespace MauiApp2
 {
     public partial class App : Application
     {

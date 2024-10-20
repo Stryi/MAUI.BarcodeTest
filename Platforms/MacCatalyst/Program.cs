@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace MAUI.BarcodeTest
+namespace MauiApp2
 {
     public class Program
     {
@@ -10,7 +10,7 @@ namespace MAUI.BarcodeTest
         {
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.
-            //UIApplication.Main(args, null, typeof(AppDelegate));
+            UIApplication.Main(args, null, typeof(AppDelegate));
         }
     }
 }

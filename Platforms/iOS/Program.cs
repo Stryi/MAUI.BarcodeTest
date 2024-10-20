@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace MAUI.BarcodeTest
+namespace MauiApp2
 {
     public class Program
     {

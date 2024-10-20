@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace MAUI.BarcodeTest
+namespace MauiApp2
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

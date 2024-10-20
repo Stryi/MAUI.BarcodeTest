@@ -2,7 +2,7 @@
 
 using ZXing.Net.Maui.Controls;
 
-namespace MAUI.BarcodeTest
+namespace MauiApp2
 {
     public static class MauiProgram
     {
