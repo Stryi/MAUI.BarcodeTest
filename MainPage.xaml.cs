@@ -10,7 +10,6 @@
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
-
             Navigation.PushAsync(new BarcodeReader());
 
             //if (count == 1)
