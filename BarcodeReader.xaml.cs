@@ -15,11 +15,24 @@ public partial class BarcodeReader : ContentPage
 
     protected void barcodeReader_BarcodesDetected(object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
     {
-        // Handle barcode detected event here
-        var barcodes = e.Results; // Access the detected barcodes here
-        foreach (var barcode in barcodes)
+        try
         {
-            LabelEAN.Text = $"Detected Barcode: {barcode.Value}";
+            // Handle barcode detected event here
+            var barcodes = e?.Results; // Access the detected barcodes here
+            if (barcodes == null)
+            {
+                LabelEAN.Text = $"e.Result ist NULL";
+                return;
+            }
+
+            foreach (var barcode in barcodes)
+            {
+                LabelEAN.Text = $"Detected Barcode: {barcode?.Value}";
+            }
+        }
+        catch(Exception ex)
+        {
+            LabelEAN.Text = ex.Message;
         }
     }
 
@@ -42,8 +55,14 @@ public partial class BarcodeReader : ContentPage
         var conn = new SQLite.SQLiteConnection(targetFile, false);
 
         var article = conn.Query<Article>("SELECT ArticleId, Name FROM Article");
-
-        LabelEAN.Text = $"Detected Barcode: 0000000000000";
+        if (article.Count > 0)
+        {
+            LabelEAN.Text = $"Detected Barcode: {article[0].Name}";
+        }
+        else
+        {
+            LabelEAN.Text = $"Detected Barcode: Keine Artikel";
+        }
     }
 
     public async Task CopyFileToAppDataDirectory(string filename)
